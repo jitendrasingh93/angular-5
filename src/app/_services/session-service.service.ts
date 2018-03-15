@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router'
-const MINUTES_UNITL_AUTO_LOGOUT = 1; // in mins
+const MINUTES_UNITL_AUTO_LOGOUT = 2; // in mins
 const CHECK_INTERVAL = 15000; // in ms
 const STORE_KEY =  'lastAction';
 
@@ -49,10 +49,11 @@ export class SessionServiceService {
     const isTimeout = diff < 0;
 
     if (isTimeout)  {
-      alert("isTimeout");
+      //alert("isTimeout");
       localStorage.clear();
-      alert("Your session has expired.To start a new session please login again");
-      this.router.navigate(['login']);
+      window.location.reload();
+      //alert("Your session has expired.To start a new session please login again");
+      //this.router.navigate(['login']);
       clearInterval(CHECK_INTERVAL);
       //this.router.navigate(['login'], { queryParams: { returnUrl: state.url }});
     }

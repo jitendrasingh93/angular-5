@@ -16,6 +16,7 @@ import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
 import { AppComponent } from './app.component';
 import {SessionServiceService} from "./_services/session-service.service";
+import { EditComponent } from './edit/edit/edit.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {SessionServiceService} from "./_services/session-service.service";
     AlertComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

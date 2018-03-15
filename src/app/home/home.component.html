@@ -97,7 +97,14 @@
         <td>{{user.role}}</td>
         <td>{{user.enabled}}</td>
         <td>{{user.dateCreated}}</td>
-        <td><a (click)="deleteUser(user.id)">Delete</a></td>
+        <td>
+          <a (click)="updateUser(user.id)">
+            <span class="glyphicon glyphicon-pencil" style="cursor: pointer;"></span>
+          </a>
+            <a (click)="deleteUser(user.id)">
+              <span class="glyphicon glyphicon-trash" style="cursor: pointer;"></span>
+          </a>
+        </td>
       </tr>
     </table>
   </div>
