@@ -2,6 +2,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map'
+import { JwtHelper } from '../_helpers/index';
+
 
 @Injectable()
 export class AuthenticationService {
@@ -26,9 +28,13 @@ export class AuthenticationService {
       } else {
         if (null != response.token) {
           this.token = response.token;
+           var data = this.deserializeToken();
+          console.log("decode : "+data.given_name);
+
+          //var parsedToken = JwtHelper.decodeToken(this.token);
           localStorage.setItem('currentUser', JSON.stringify({ username: username, token: response.token }));
           response = {success: true};
-          alert("Store Token and go to home page");
+          console.log("Store Token and go to home page");
         } else {
           response = {success: false, message: response.message};
           alert(response.message);
@@ -52,6 +58,12 @@ export class AuthenticationService {
      return user;
      });*/
 
+
+    deserializeToken () {
+    var jwtHelper = new JwtHelper();
+    var parsedToken = jwtHelper.decodeToken(this.token);
+    return parsedToken;
+  }
 
     logout() {
         // remove user from local storage to log user out

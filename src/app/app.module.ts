@@ -15,6 +15,7 @@ import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
 import { AppComponent } from './app.component';
+import {SessionServiceService} from "./_services/session-service.service";
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { AppComponent } from './app.component';
     AuthGuard,
     AlertService,
     AuthenticationService,
+    SessionServiceService,
     UserService,
     {
       provide: HTTP_INTERCEPTORS,

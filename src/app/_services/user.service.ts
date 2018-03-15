@@ -8,7 +8,7 @@ export class UserService {
     constructor(private http: HttpClient) { }
 
     getAll() {
-        return this.http.get<User[]>('/api/users');
+        return this.http.get<User[]>('https://2ayo5w0voh.execute-api.us-west-2.amazonaws.com/prod/users');
     }
 
     getById(id: number) {
