@@ -51,6 +51,7 @@ export class LoginComponent implements OnInit {
             data => {
               if (data.success) {
                 this.router.navigate([this.returnUrl]);
+                window.location.reload();
               } else {
                 this.alertService.error(data.message);
                 this.loading = false;

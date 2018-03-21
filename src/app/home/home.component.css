@@ -1,0 +1,9 @@
+.navbar-default {
+  background-color: rgba(68, 193, 230, 0.84);
+}
+.navbar-default .navbar-brand>li>a {
+  color: rgba(17, 12, 22, 0.91);
+}
+.jumbotron {
+  background-color: white;
+}

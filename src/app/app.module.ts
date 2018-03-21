@@ -17,6 +17,9 @@ import { RegisterComponent } from './register/index';
 import { AppComponent } from './app.component';
 import {SessionServiceService} from "./_services/session-service.service";
 import { EditComponent } from './edit/edit.component';
+import { UsersComponent } from './users/users.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { HeaderService } from "./_services/header.service";
 
 
 @NgModule({
@@ -26,7 +29,9 @@ import { EditComponent } from './edit/edit.component';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    EditComponent
+    EditComponent,
+    UsersComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +44,7 @@ import { EditComponent } from './edit/edit.component';
     AlertService,
     AuthenticationService,
     SessionServiceService,
+    HeaderService,
     UserService,
     {
       provide: HTTP_INTERCEPTORS,
