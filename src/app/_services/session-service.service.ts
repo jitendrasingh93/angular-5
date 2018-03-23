@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router'
-const MINUTES_UNITL_AUTO_LOGOUT = 2; // in mins
+const MINUTES_UNITL_AUTO_LOGOUT = 5; // in mins
 const CHECK_INTERVAL = 15000; // in ms
 const STORE_KEY =  'lastAction';
 

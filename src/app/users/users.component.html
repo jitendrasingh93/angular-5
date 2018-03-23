@@ -61,7 +61,7 @@
           <td>{{user.dateCreated}}</td>
           <td>
            <!-- <a (click)="updateUser(user.id)">-->
-            <a [routerLink]="['/edit']">
+            <a [routerLink]="['/edit',user.userName]">
               <span class="glyphicon glyphicon-pencil" style="cursor: pointer;"></span>
             </a>
             <a (click)="deleteUser(user.id)">

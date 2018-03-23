@@ -20,10 +20,14 @@ export class UserService {
     }
 
     update(user: User) {
-        return this.http.put('/api/users/' + user.id, user);
+        return this.http.put('https://2ayo5w0voh.execute-api.us-west-2.amazonaws.com/prod/user', user);
     }
 
     delete(id: number) {
         return this.http.delete('/api/users/' + id);
+    }
+
+    getByUserName(user:string) {
+      return this.http.get('https://2ayo5w0voh.execute-api.us-west-2.amazonaws.com/prod/user/'+user)
     }
 }
