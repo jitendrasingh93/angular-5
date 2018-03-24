@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from "../_models/user";
 import { UserService } from '../_services/index';
-import {any} from "codelyzer/util/function";
-import {ActivatedRoute} from '@angular/router'
+import {ActivatedRoute, Router} from '@angular/router'
 
 @Component({
   selector: 'app-edit',
@@ -15,7 +14,9 @@ export class EditComponent implements OnInit {
   model: any = {};
   loading = false;
 
-  constructor(private userService: UserService, private route: ActivatedRoute) { }
+  constructor(private userService: UserService,
+              private route: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit() {
     this.fetchUser();
@@ -24,6 +25,7 @@ export class EditComponent implements OnInit {
   edit() {
     this.userService.update(this.model).subscribe(response => {
       console.log("user update succefully");
+      this.router.navigate(['/users']);
       console.log(response);
     });
   }
