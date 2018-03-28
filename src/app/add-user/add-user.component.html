@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="card card-container">
+    <h3>Add User</h3>
+    <form name="form" (ngSubmit)="f.form.valid && add()" #f="ngForm" novalidate>
+
+      <!--for email-->
+      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" name="email" [(ngModel)]="model.userName" #email="ngModel" required />
+        <div *ngIf="f.submitted && !email.valid" class="help-block">email is required</div>
+      </div>
+
+      <!--for first name-->
+      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !firstName.valid }">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" required />
+        <div *ngIf="f.submitted && !firstName.valid" class="help-block">First Name is required</div>
+      </div>
+      <!--for last name-->
+      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !lastName.valid }">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" required />
+        <div *ngIf="f.submitted && !lastName.valid" class="help-block">Last Name is required</div>
+      </div>
+
+      <!--for tenant role-->
+      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !role.valid }">
+        <label for="role">Role</label>
+        <select class="form-control ng-pristine ng-valid ng-not-empty ng-valid-required ng-touched" id="role" name="role" [(ngModel)]="model.role" ng-init="model.role" required="">
+          <option ng-if="!isSystemUser()" value="TenantAdmin" class="ng-scope" selected="selected">Administrator</option>
+          <option ng-if="!isSystemUser()" value="TenantUser" class="ng-scope">Order Manager</option>
+        </select>
+      </div>
+      <!--<div class="form-group">
+        <label for="role" class="control-label">Role</label>
+        <select class="form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required" id="role" name="role" [(ngModel)]="model.role" ng-init="model.role" required="">
+          &lt;!&ndash; ngIf: isSystemUser() &ndash;&gt; &lt;!&ndash; ngIf: isSystemUser() &ndash;&gt; &lt;!&ndash; ngIf: !isSystemUser() &ndash;&gt;
+          <option ng-if="!isSystemUser()" value="TenantAdmin" class="ng-scope"  ng-selected="selected">Administrator</option>
+          &lt;!&ndash; end ngIf: !isSystemUser() &ndash;&gt; &lt;!&ndash; ngIf: !isSystemUser() &ndash;&gt;
+          <option ng-if="!isSystemUser()" value="TenantUser" class="ng-scope">Order Manager</option>
+          &lt;!&ndash; end ngIf: !isSystemUser() &ndash;&gt;
+        </select>
+      </div>-->
+
+      <!--for button-->
+      <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">Save</button>
+        <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+        <a [routerLink]="['/users']" class="btn btn-link">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>

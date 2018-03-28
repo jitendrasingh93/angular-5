@@ -10,9 +10,7 @@ import {ActivatedRoute, Router} from '@angular/router'
 })
 export class EditComponent implements OnInit {
   user: any;
-  currentUser: User;
   model: any = {};
-  loading = false;
 
   constructor(private userService: UserService,
               private route: ActivatedRoute,

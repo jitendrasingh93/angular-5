@@ -20,6 +20,7 @@ import { EditComponent } from './edit/edit.component';
 import { UsersComponent } from './users/users.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { HeaderService } from "./_services/header.service";
+import { AddUserComponent } from './add-user/add-user.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { HeaderService } from "./_services/header.service";
     RegisterComponent,
     EditComponent,
     UsersComponent,
-    HeaderComponent
+    HeaderComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,
