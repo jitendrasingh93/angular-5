@@ -24,7 +24,7 @@
       </div>
 
       <!--for tenant role-->
-      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !role.valid }">
+      <div class="form-group">
         <label for="role">Role</label>
         <select class="form-control ng-pristine ng-valid ng-not-empty ng-valid-required ng-touched" id="role" name="role" [(ngModel)]="model.role" ng-init="model.role" required="">
           <option ng-if="!isSystemUser()" value="TenantAdmin" class="ng-scope" selected="selected">Administrator</option>

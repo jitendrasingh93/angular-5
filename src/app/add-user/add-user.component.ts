@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from "../_models/user";
 import {UserService} from "../_services/user.service";
+import {Router} from '@angular/router'
+
 
 @Component({
   selector: 'app-add-user',
@@ -14,15 +16,18 @@ export class AddUserComponent implements OnInit {
   model: any = {};
   loading = false;
 
-  constructor(private userService:UserService) {}
+  constructor(
+    private userService:UserService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
   }
 
   add() {
     this.userService.addUser(this.model).subscribe(response => {
+      this.router.navigate(['/users']);
       console.log("User successfully added");
     });
-    alert("in-progress"+JSON.stringify(this.model));
   }
 }

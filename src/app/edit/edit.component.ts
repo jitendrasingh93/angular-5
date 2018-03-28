@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {User} from "../_models/user";
 import { UserService } from '../_services/index';
 import {ActivatedRoute, Router} from '@angular/router'
 
@@ -11,6 +10,7 @@ import {ActivatedRoute, Router} from '@angular/router'
 export class EditComponent implements OnInit {
   user: any;
   model: any = {};
+  loading = false;
 
   constructor(private userService: UserService,
               private route: ActivatedRoute,
