@@ -4,3 +4,11 @@
 .navbar-default .navbar-brand>li>a {
   color: rgba(17, 12, 22, 0.91);
 }
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}

@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../_models/index';
 import { UserService } from '../_services/index';
+import {DialogComponent} from "../shared/dialog/dialog.component";
+import {MatDialog} from "@angular/material";
+
+
 
 
 @Component({
@@ -11,17 +15,20 @@ import { UserService } from '../_services/index';
 export class UsersComponent implements OnInit {
   currentUser: User;
   users: User[] = [];
+  //dialog:DialogComponent;
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, public dialog : MatDialog) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    //this.dialog = new DialogComponent(this.dialog);
   }
 
   ngOnInit() {
     this.loadAllUsers();
   }
 
-  deleteUser(id: number) {
-    this.userService.delete(id).subscribe(() => { this.loadAllUsers() });
+  deleteUser(userName: string) {
+    this.showError("Invalid credentials");
+    //this.userService.delete('').subscribe(() => { this.loadAllUsers() });
   }
 
   private loadAllUsers() {
@@ -30,7 +37,12 @@ export class UsersComponent implements OnInit {
 
   private updateUser() {
     this.userService.update(this.currentUser).subscribe(user => {
-      console.log("user : "+user);
     })
+  }
+
+  showError(error : string) : void {
+    this.dialog.open(DialogComponent, {
+      data: {errorMsg: error} ,width : '350px'
+    });
   }
 }

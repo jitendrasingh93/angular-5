@@ -19,7 +19,7 @@ const appRoutes: Routes = [
     { path: 'user/add', component: AddUserComponent, canActivate: [AuthGuard]},
 
     // otherwise redirect to home
-    { path: '**', redirectTo: '' }
+    { path: '**', redirectTo: '/' }
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);

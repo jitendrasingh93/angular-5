@@ -1,9 +1,12 @@
-.navbar-default {
-  background-color: rgba(68, 193, 230, 0.84);
+.example-card {
+  max-width: 100%;
 }
-.navbar-default .navbar-brand>li>a {
-  color: rgba(17, 12, 22, 0.91);
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
 }
-.jumbotron {
-  background-color: white;
+
+.mat-img {
+  padding: 5px;
 }

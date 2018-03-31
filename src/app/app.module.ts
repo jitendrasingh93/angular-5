@@ -21,6 +21,21 @@ import { UsersComponent } from './users/users.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { HeaderService } from "./_services/header.service";
 import { AddUserComponent } from './add-user/add-user.component';
+import { DialogComponent } from './shared/dialog/dialog.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  MatButtonModule,
+  MatMenuModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatCardModule,
+  MatIconModule,
+} from '@angular/material';
+import {MatDialogModule} from '@angular/material/dialog';
+
+
+
+
 
 
 @NgModule({
@@ -33,14 +48,24 @@ import { AddUserComponent } from './add-user/add-user.component';
     EditComponent,
     UsersComponent,
     HeaderComponent,
-    AddUserComponent
+    AddUserComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-  routing
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatDialogModule,
+    MatMenuModule,
+    MatCardModule,
+    MatIconModule,
+    routing
 ],
+  entryComponents: [DialogComponent],
+
   providers: [
     AuthGuard,
     AlertService,
@@ -54,11 +79,14 @@ import { AddUserComponent } from './add-user/add-user.component';
       multi: true
     },
 
+
     // provider used to create fake backend
     fakeBackendProvider
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+}
 
 

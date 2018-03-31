@@ -34,8 +34,8 @@ export class UserService {
         return this.http.put('https://2ayo5w0voh.execute-api.us-west-2.amazonaws.com/prod/user', user);
     }
 
-    delete(id: number) {
-        return this.http.delete('/api/users/' + id);
+    delete(userName: string) {
+        return this.http.delete('/api/users/' + userName);
     }
 
     /*

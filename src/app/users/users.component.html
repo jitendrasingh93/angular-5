@@ -36,8 +36,8 @@
       <a ></a>
     </div>
     <div align="right" class="ng-scope">
-      <a class="btn btn-primary" [routerLink]="['/user/add']">
-        <span class="glyphicon glyphicon-plus"></span> Add User</a>
+      <button mat-raised-button [routerLink]="['/user/add']">Add User</button>
+      <!--<a class="btn btn-primary" [routerLink]="['/user/add']"><span class="glyphicon glyphicon-plus"></span> Add User</a>-->
     </div>
     <div class="text-center">
       <!-- <h1>Hi {{vm.user.firstName}}!</h1>-->
@@ -71,7 +71,7 @@
             <a [routerLink]="['/edit',user.userName]">
               <span class="glyphicon glyphicon-pencil" style="cursor: pointer;"></span>
             </a>
-            <a (click)="deleteUser(user.id)">
+            <a (click)="deleteUser(user.userName)">
               <span class="glyphicon glyphicon-trash" style="cursor: pointer;"></span>
             </a>
           </td>

@@ -1,0 +1,33 @@
+<div role="dialog" aria-label="Eat me!" layout="column" layout-align="center center">
+  <mat-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Confirmation!</h2>
+    </div>
+  </mat-toolbar>
+  <mat-dialog-content class="error"></mat-dialog-content>
+  <div class="demo-dialog-content">
+    <p>
+      Are you sure you wish to delete the user: xyz ?
+    <div layout="row" >
+      <!--<img flex alt="Delicious donut" src="img/donut.jpg">-->
+    </div>
+  </div>
+
+  <div layout="row">
+    <button mat-button (click)="closeDialog()">Yes</button>
+    <button mat-button (click)="closeDialog()">No</button>
+  </div>
+
+  <!--<div layout="row" class="demo-dialog-button">
+    <button mat-button md-autofocus flex class="md-primary" (click)="closeDialog()">Close</button>
+  </div>-->
+</div>
+
+
+<!--
+<h2 mat-dialog-title>Error</h2>
+<mat-dialog-content class="error"></mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button (click)="closeDialog()">Ok</button>
+</mat-dialog-actions>
+-->
